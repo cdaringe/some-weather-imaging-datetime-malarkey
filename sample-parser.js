@@ -7,6 +7,7 @@
 //    .map(it => it[it.length - 1])
 //    .join('\n')
 // )
+
 const fs = require("node:fs");
 const values = fs
   .readFileSync("sample.txt", "utf-8")
@@ -49,7 +50,5 @@ const values = fs
     [i, a.toISOString(), a.getTime(), b.toISOString(), b.getTime()].join(","),
   )
   .join("\n");
-
-console.log(values);
 
 fs.writeFileSync("output.csv", "i,a_iso,a_epo,b_iso,b_epo\n" + values);
